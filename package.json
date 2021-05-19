@@ -1,6 +1,6 @@
 {
   "name": "capacitor-file-select",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Capacitor Plugin to select Files",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
