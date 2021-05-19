@@ -8,9 +8,7 @@ import android.net.Uri;
 import android.provider.OpenableColumns;
 import android.util.Log;
 import android.webkit.MimeTypeMap;
-
 import androidx.activity.result.ActivityResult;
-
 import com.getcapacitor.JSArray;
 import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
@@ -18,14 +16,12 @@ import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.ActivityCallback;
 import com.getcapacitor.annotation.CapacitorPlugin;
-
-import org.json.JSONException;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import org.json.JSONException;
 
 @CapacitorPlugin(name = "FileSelect")
 public class FileSelectPlugin extends Plugin {
@@ -38,8 +34,7 @@ public class FileSelectPlugin extends Plugin {
         Intent chooseFile = new Intent(Intent.ACTION_GET_CONTENT);
 
         List<String> supportedMimeTypes = new ArrayList<>();
-        label:
-        for (int i = 0; i < extensions.length(); i++) {
+        label:for (int i = 0; i < extensions.length(); i++) {
             try {
                 switch (extensions.getString(i)) {
                     case "images":
@@ -62,12 +57,12 @@ public class FileSelectPlugin extends Plugin {
                 Log.i("[FileSelect]", e.getMessage());
             }
         }
-        if(supportedMimeTypes.size() == 0) {
+        if (supportedMimeTypes.size() == 0) {
             supportedMimeTypes.add("*/*");
         }
 
         String type = "";
-        for (String mime: supportedMimeTypes) {
+        for (String mime : supportedMimeTypes) {
             type += mime + "|";
         }
         type = type.substring(0, type.length() - 1);

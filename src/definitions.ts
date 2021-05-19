@@ -2,7 +2,7 @@ export interface FileSelectPlugin {
   /**
    * Opens the File Selector
    */
-  select(options: FileSelectOptions): Promise<{files: FileSelectResult[]}>;
+  select(options: FileSelectOptions): Promise<{ files: FileSelectResult[] }>;
 }
 
 export interface FileSelectOptions {
