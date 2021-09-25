@@ -20,7 +20,7 @@ export interface FileSelectResult {
   /**
    * File Path
    */
-  path: boolean;
+  path: string;
   /**
    * File Name
    */
