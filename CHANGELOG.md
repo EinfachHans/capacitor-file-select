@@ -1,5 +1,8 @@
 # Changelog
 
+# 1.1.0
+- Update to Capacitor 4
+
 # 1.0.2
 - update to Gradle 7
 

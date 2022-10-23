@@ -2,7 +2,7 @@
 ![Maintenance](https://img.shields.io/maintenance/yes/2021)
 [![npm](https://img.shields.io/npm/v/capacitor-file-select)](https://www.npmjs.com/package/capacitor-file-select)
 
-👉🏼 **Note**: this Plugin is developed for Capacitor V3
+👉🏼 **Note**: this Plugin is developed for Capacitor V4
 
 This Plugin it used to select Files from the Device. Information about supported Extensions can be found here:
 - iOS: https://developer.apple.com/library/archive/documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html
@@ -42,7 +42,7 @@ The full Changelog is available [here](CHANGELOG.md)
 ### select(...)
 
 ```typescript
-select(options: FileSelectOptions) => any
+select(options: FileSelectOptions) => Promise<{ files: FileSelectResult[]; }>
 ```
 
 Opens the File Selector
@@ -51,7 +51,7 @@ Opens the File Selector
 | ------------- | --------------------------------------------------------------- |
 | **`options`** | <code><a href="#fileselectoptions">FileSelectOptions</a></code> |
 
-**Returns:** <code>any</code>
+**Returns:** <code>Promise&lt;{ files: FileSelectResult[]; }&gt;</code>
 
 --------------------
 
@@ -59,20 +59,20 @@ Opens the File Selector
 ### Interfaces
 
 
-#### FileSelectOptions
-
-| Prop             | Type                 | Description           |
-| ---------------- | -------------------- | --------------------- |
-| **`multiple`**   | <code>boolean</code> | Select multiple Files |
-| **`extensions`** | <code>{}</code>      | Extensions to select  |
-
-
 #### FileSelectResult
 
-| Prop            | Type                 | Description     |
-| --------------- | -------------------- | --------------- |
-| **`path`**      | <code>boolean</code> | File Path       |
-| **`name`**      | <code>string</code>  | File Name       |
-| **`extension`** | <code>string</code>  | File Extensions |
+| Prop            | Type                | Description     |
+| --------------- | ------------------- | --------------- |
+| **`path`**      | <code>string</code> | File Path       |
+| **`name`**      | <code>string</code> | File Name       |
+| **`extension`** | <code>string</code> | File Extensions |
+
+
+#### FileSelectOptions
+
+| Prop             | Type                  | Description           |
+| ---------------- | --------------------- | --------------------- |
+| **`multiple`**   | <code>boolean</code>  | Select multiple Files |
+| **`extensions`** | <code>string[]</code> | Extensions to select  |
 
 </docgen-api>
